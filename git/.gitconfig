@@ -1,0 +1,12 @@
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	unstage = reset HEAD --
+	ph = push origin HEAD
+[user]
+	name = Sindre Magnussen
+	email = sindrma@gmail.com
+[core]
+	editor = /usr/bin/vim

@@ -1,0 +1,21 @@
+# Fonts
+tap "homebrew/cask-fonts"
+cask "font-fira-code"
+
+# shell tools
+cask "iterm2"
+brew "zsh"
+brew "yarn"
+
+# vim tools
+brew "vim"
+
+# editors
+cask "visual-studio-code"
+
+# apps
+cask "google-chrome"
+cask "spotify"
+
+# languages
+brew "nvm"
