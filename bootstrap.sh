@@ -22,9 +22,8 @@ sudo rm -rf ~/Brewfile > /dev/null 2>&1
 # Create symlinks in the home folder
 # Allow overriding with files of matching names in the custom-configs dir
 #==============
-#SYMLINKS+=('.vim')
-#ln -sf ~/.dotfiles/.vimrc ~/.vimrc
-#SYMLINKS+=('.vimrc')
+ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+SYMLINKS+=('.vimrc')
 ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
 SYMLINKS+=('.zshrc')
 ln -sf ~/.dotfiles/homebrew/Brewfile ~/Brewfile
@@ -62,6 +61,10 @@ vim +PluginInstall +qall
 git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
 ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
+#==============
+# zsh autosuggestions
+#==============
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 #==============
 # And we are done

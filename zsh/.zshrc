@@ -1,8 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-source $HOME/.oh-my-zsh/oh-my-zsh.sh
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -65,8 +62,12 @@ ZSH_THEME="spaceship"
 plugins=(
   git
   docker
+  zsh-autosuggestions
   osx
 )
+
+# Path to your oh-my-zsh installation.
+source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 # User configuration
 
@@ -97,15 +98,12 @@ plugins=(
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=/opt/homebrew/bin:$PATH
+
 # NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-export PATH=/opt/homebrew/bin:$PATH
 
 # Markdown files
 alias -s md=code
@@ -120,4 +118,3 @@ alias -s {cs,ts,html}=code
 #export .alias
 #export .env
 #export .inputrc
- 
