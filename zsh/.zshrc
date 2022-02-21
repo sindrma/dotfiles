@@ -63,7 +63,7 @@ plugins=(
   git
   docker
   zsh-autosuggestions
-  osx
+  macos
 )
 
 # Path to your oh-my-zsh installation.
