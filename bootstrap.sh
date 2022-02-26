@@ -50,6 +50,11 @@ chsh -s /bin/zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #==============
+# Install fzf
+#==============
+/opt/homebrew/opt/fzf/install
+
+#==============
 # Initialise Vundle plugins
 #==============
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
