@@ -100,6 +100,7 @@ source $HOME/.oh-my-zsh/oh-my-zsh.sh
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin/v:$PATH
 
 # NVM
 export NVM_DIR=~/.nvm
