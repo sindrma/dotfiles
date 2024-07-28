@@ -15,7 +15,7 @@ brew "vim"
 cask "visual-studio-code"
 
 # apps
-cask "google-chrome"
+cask "arc"
 cask "spotify"
 
 # languages
