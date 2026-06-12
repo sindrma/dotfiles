@@ -1,3 +1,9 @@
+#!/usr/bin/env bash
+#==============
+# Resolve where this repo is cloned so symlinks work from any location
+#==============
+DOTFILES_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
 #==============
 # Install all the packages
 #==============
@@ -22,18 +28,18 @@ sudo rm -rf ~/Brewfile > /dev/null 2>&1
 # Create symlinks in the home folder
 # Allow overriding with files of matching names in the custom-configs dir
 #==============
-ln -sf ~/.dotfiles/.vimrc ~/.vimrc
+ln -sf "$DOTFILES_DIR/vim/.vimrc" ~/.vimrc
 SYMLINKS+=('.vimrc')
-ln -sf ~/.dotfiles/zsh/.zshrc ~/.zshrc
+ln -sf "$DOTFILES_DIR/zsh/.zshrc" ~/.zshrc
 SYMLINKS+=('.zshrc')
-ln -sf ~/.dotfiles/homebrew/Brewfile ~/Brewfile
+ln -sf "$DOTFILES_DIR/homebrew/Brewfile" ~/Brewfile
 SYMLINKS+=('Brewfile')
-ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
+ln -sf "$DOTFILES_DIR/git/.gitconfig" ~/.gitconfig
 SYMLINKS+=('.gitconfig')
-ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
+ln -sf "$DOTFILES_DIR/git/.gitignore" ~/.gitignore
 SYMLINKS+=('.gitignore')
 mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
-ln -sf ~/.dotfiles/ghostty/config.ghostty "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+ln -sf "$DOTFILES_DIR/ghostty/config.ghostty" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 SYMLINKS+=('config.ghostty')
 
 echo ${SYMLINKS[@]}
@@ -45,7 +51,7 @@ cd -
 #==============
 # macOS defaults (file associations)
 #==============
-~/.dotfiles/macos/defaults.sh
+"$DOTFILES_DIR/macos/defaults.sh"
 
 #==============
 # Set zsh as the default shell
