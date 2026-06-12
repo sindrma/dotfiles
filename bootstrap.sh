@@ -43,6 +43,11 @@ brew bundle
 cd -
 
 #==============
+# macOS defaults (file associations)
+#==============
+~/.dotfiles/macos/defaults.sh
+
+#==============
 # Set zsh as the default shell
 #==============
 chsh -s /bin/zsh
