@@ -21,3 +21,4 @@ cask "spotify"
 
 # languages
 brew "nvm"
+brew "pyenv"
