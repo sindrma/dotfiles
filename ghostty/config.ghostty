@@ -1,0 +1,7 @@
+theme = Aizen Dark
+
+split-divider-color = #F0f0f0
+palette = 8=#D3D3D3
+
+keybind = opt+backspace=text:\x17
+keybind = cmd+backspace=text:\x15

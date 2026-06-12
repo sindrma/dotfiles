@@ -32,6 +32,9 @@ ln -s ~/.dotfiles/git/.gitconfig ~/.gitconfig
 SYMLINKS+=('.gitconfig')
 ln -s ~/.dotfiles/git/.gitignore ~/.gitignore
 SYMLINKS+=('.gitignore')
+mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
+ln -sf ~/.dotfiles/ghostty/config.ghostty "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+SYMLINKS+=('config.ghostty')
 
 echo ${SYMLINKS[@]}
 

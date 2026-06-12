@@ -3,7 +3,7 @@ tap "homebrew/cask-fonts"
 cask "font-fira-code"
 
 # shell tools
-cask "iterm2"
+cask "ghostty"
 brew "zsh"
 brew "yarn"
 brew "fzf"
