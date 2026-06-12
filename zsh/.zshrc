@@ -121,3 +121,9 @@ alias -s {cs,ts,html}=code
 #export .alias
 #export .env
 #export .inputrc
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Python env (pyenv)
+eval "$(pyenv init --path)"

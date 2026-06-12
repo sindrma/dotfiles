@@ -3,10 +3,11 @@ tap "homebrew/cask-fonts"
 cask "font-fira-code"
 
 # shell tools
-cask "iterm2"
+cask "ghostty"
 brew "zsh"
 brew "yarn"
 brew "fzf"
+brew "duti"
 
 # vim tools
 brew "vim"
@@ -20,3 +21,4 @@ cask "spotify"
 
 # languages
 brew "nvm"
+brew "pyenv"
