@@ -127,3 +127,6 @@ alias -s {cs,ts,html}=code
 
 # Python env (pyenv)
 eval "$(pyenv init --path)"
+
+# Include dotfiles (hidden folders) in tab completion
+_comp_options+=(globdots)
