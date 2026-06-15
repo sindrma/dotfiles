@@ -1,32 +1,19 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
+Plug 'mg979/vim-visual-multi'   " multiple cursors (successor to terryma/vim-multiple-cursors)
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'         " lets . repeat surround/commentary actions
+Plug 'tpope/vim-commentary'     " gcc / gc{motion} to toggle comments
+Plug 'airblade/vim-gitgutter'
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+call plug#end()
+" plug#end() runs `filetype plugin indent on` and `syntax enable` automatically.
+" Run :PlugInstall to install, :PlugUpdate to update, :PlugClean to prune.
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'itchyny/lightline.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/fzf.vim'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-" 
-" From command line: vim +PluginInstall +qall
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+set termguicolors
+set background=dark
+silent! colorscheme gruvbox
 
 au BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 syntax on
