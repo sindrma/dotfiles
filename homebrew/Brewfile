@@ -8,6 +8,7 @@ brew "zsh"
 brew "yarn"
 brew "fzf"
 brew "duti"
+brew "sandvault"
 
 # vim tools
 brew "vim"
