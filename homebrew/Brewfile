@@ -15,6 +15,7 @@ brew "vim"
 
 # editors
 cask "visual-studio-code"
+cask "cmux"
 
 # apps
 cask "arc"
