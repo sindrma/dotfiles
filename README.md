@@ -15,7 +15,9 @@ convention, it works from wherever you put the repo. It will:
 
 - install Homebrew and the packages in `homebrew/Brewfile`
 - symlink the configs into your home folder (`.zshrc`, `.gitconfig`, `.vimrc`,
-  `Brewfile`, and the Ghostty config)
+  `Brewfile`, the Ghostty config, and the Claude Code `CLAUDE.md` and `skills/`
+  under `~/.claude`; `~/.claude/settings.json` is seeded from
+  `claude/settings.json` only if it doesn't already exist)
 - set macOS file-association defaults (`macos/defaults.sh`)
 - set up zsh, oh-my-zsh, fzf, and the vim plugins
 
