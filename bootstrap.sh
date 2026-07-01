@@ -42,6 +42,23 @@ mkdir -p "$HOME/Library/Application Support/com.mitchellh.ghostty"
 ln -sf "$DOTFILES_DIR/ghostty/config.ghostty" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
 SYMLINKS+=('config.ghostty')
 
+#==============
+# Claude Code config (CLAUDE.md, skills, settings)
+# Only touch the specific files/dir -- never the whole ~/.claude,
+# which holds runtime state (history, sessions, cache, plugins).
+# CLAUDE.md and skills are symlinked so the repo stays the source of
+# truth (edits flow back automatically). Use -n on the skills dir so we
+# replace it rather than linking inside it. settings.json is copied (not
+# symlinked) and only when absent, so an existing settings.json is left
+# untouched.
+#==============
+mkdir -p ~/.claude
+ln -sf "$DOTFILES_DIR/claude/CLAUDE.md" ~/.claude/CLAUDE.md
+SYMLINKS+=('CLAUDE.md')
+ln -sfn "$DOTFILES_DIR/claude/skills" ~/.claude/skills
+SYMLINKS+=('skills')
+[ -f ~/.claude/settings.json ] || cp "$DOTFILES_DIR/claude/settings.json" ~/.claude/settings.json
+
 echo ${SYMLINKS[@]}
 
 cd ~
