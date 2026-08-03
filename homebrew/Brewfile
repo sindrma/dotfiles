@@ -1,5 +1,4 @@
 # Fonts
-tap "homebrew/cask-fonts"
 cask "font-fira-code"
 
 # shell tools
@@ -7,7 +6,9 @@ cask "ghostty"
 brew "zsh"
 brew "yarn"
 brew "fzf"
+brew "gh"
 brew "duti"
+brew "dockutil"
 brew "sandvault"
 
 # vim tools
@@ -16,10 +17,21 @@ brew "vim"
 # editors
 cask "visual-studio-code"
 cask "cmux"
+cask "claude-code"
 
 # apps
+cask "1password"
+cask "1password-cli"
 cask "arc"
+cask "claude"
 cask "spotify"
+
+# containers
+cask "docker-desktop"
+
+# databases
+# keg-only, so .zshrc puts its bin dir on PATH rather than force-linking
+brew "postgresql@18"
 
 # languages
 brew "nvm"

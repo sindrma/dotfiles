@@ -143,9 +143,11 @@ brew bundle
 cd -
 
 #==============
-# macOS defaults (file associations)
+# macOS defaults (file associations, Dock)
+# dock.sh needs dockutil, so it has to run after brew bundle above.
 #==============
 "$DOTFILES_DIR/macos/defaults.sh"
+"$DOTFILES_DIR/macos/dock.sh"
 
 #==============
 # Set zsh as the default shell

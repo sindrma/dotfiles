@@ -23,6 +23,8 @@ convention, it works from wherever you put the repo. It will:
   `CLAUDE.md` and `skills/` under `~/.claude`; `~/.claude/settings.json` is
   seeded from `claude/settings.json` only if it doesn't already exist)
 - set macOS file-association defaults (`macos/defaults.sh`)
+- rebuild the Dock from `macos/dock.sh`: the pinned apps, the Downloads stack,
+  and the icon size
 - set zsh as the login shell, and set up fzf and the vim plugins
 
 `zsh/.inputrc` is readline config, not zsh. zsh never reads it, but it is
@@ -31,3 +33,22 @@ zsh counterpart is `zsh/.keybindings`.
 
 Because the configs are symlinks back into this repo, editing e.g. `~/.zshrc`
 edits the tracked file directly.
+
+## The Dock
+
+`macos/dock.sh` is declarative. It removes every pinned item and rebuilds the
+Dock from the lists in the script, so re-running `bootstrap.sh` will discard any
+Dock changes you made by hand. To change what is pinned, or the icon size, edit
+`macos/dock.sh` rather than dragging things around. Run it on its own with:
+
+```sh
+./macos/dock.sh
+```
+
+## Manual steps
+
+Not everything can be automated:
+
+- **Magnet** has no Homebrew cask, so install it from the Mac App Store.
+- **1Password CLI** needs to be enabled from within the 1Password app
+  (Settings, Developer) before `op` will connect.
