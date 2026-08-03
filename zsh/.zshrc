@@ -117,16 +117,23 @@ alias -s json=code
 # bulk association
 alias -s {cs,ts,html}=code
 
-#export .functions
-#export .alias
-#export .env
-#export .inputrc
-
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Python env (pyenv)
 eval "$(pyenv init --path)"
+
+# Shared shell config, symlinked into the home folder by bootstrap.sh.
+# Sourced last so these options, aliases, and key bindings win over the ones
+# oh-my-zsh, its plugins, and fzf set up above.
+#
+# ~/.inputrc is deliberately absent from this list: it is readline config for
+# tools like psql and the python REPL, and zsh never reads it. Its bindings
+# are mirrored in .keybindings.
+for _dotfile in ~/.env ~/.functions ~/.alias ~/.keybindings; do
+  [ -r "$_dotfile" ] && source "$_dotfile"
+done
+unset _dotfile
 
 # Include dotfiles (hidden folders) in tab completion
 _comp_options+=(globdots)
