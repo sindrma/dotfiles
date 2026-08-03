@@ -1,0 +1,30 @@
+# zsh equivalents of the readline bindings in .inputrc.
+#
+# zsh does not read .inputrc at all, so those bindings have to be declared
+# again here. .inputrc is still symlinked into the home folder because
+# readline-based tools (psql, the python REPL, sqlite3) do read it.
+#
+# Sourced from .zshrc after oh-my-zsh, its plugins, and fzf, so these win
+# over the bindings those set up.
+
+zmodload -i zsh/complist
+
+# Tab completion regardless of filename case, falling back to partial-word
+# matching. Mirrors "set completion-ignore-case on".
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'l:|=* r:|=*'
+
+# List all matches as soon as the completion is ambiguous, rather than
+# requiring a second Tab. Mirrors "set show-all-if-ambiguous on".
+setopt auto_list
+unsetopt list_ambiguous
+
+# Flip through completion matches with Shift-Tab.
+bindkey '^[[Z' reverse-menu-complete
+
+# Arrow keys search history filtered by what has already been typed, rather
+# than walking it unfiltered.
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '^[[A' up-line-or-beginning-search
+bindkey '^[[B' down-line-or-beginning-search
