@@ -104,6 +104,11 @@ export PATH=/usr/local/bin/v:$PATH
 export PATH=$HOME/flutter/bin:$PATH
 export PATH=$HOME/.gem/bin:$PATH
 
+# Postgres. postgresql@18 is keg_only :versioned_formula, so brew deliberately
+# does not link psql, pg_dump and friends into bin. Prefer this over
+# `brew link --force`, which conflicts as soon as a second version is installed.
+export PATH="/opt/homebrew/opt/postgresql@18/bin:$PATH"
+
 # NVM
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
