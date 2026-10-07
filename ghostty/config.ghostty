@@ -5,3 +5,13 @@ palette = 8=#D3D3D3
 
 keybind = opt+backspace=text:\x17
 keybind = cmd+backspace=text:\x15
+
+# Notifications. A ringing tab gets a 🔔 prefix on its title and a border;
+# attention bounces the Dock icon while Ghostty is unfocused.
+bell-features = attention,title,border
+
+# Ring the bell and post a macOS notification when a command running for 10s
+# or more finishes in a tab that isn't focused. Relies on shell integration.
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = bell,notify
+notify-on-command-finish-after = 10s
