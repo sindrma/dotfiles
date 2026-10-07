@@ -17,7 +17,6 @@ brew "vim"
 # editors
 cask "visual-studio-code"
 cask "zed"
-cask "cmux"
 cask "claude-code"
 
 # apps
