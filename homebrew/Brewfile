@@ -26,8 +26,10 @@ cask "claude"
 cask "spotify"
 cask "zen"
 
-# containers
+# containers and kubernetes
 cask "docker-desktop"
+brew "kubernetes-cli"
+brew "kubetail"
 
 # databases
 # keg-only, so .zshrc puts its bin dir on PATH rather than force-linking

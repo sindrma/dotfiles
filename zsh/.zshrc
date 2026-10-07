@@ -62,6 +62,7 @@ ZSH_THEME="spaceship"
 plugins=(
   git
   docker
+  kubectl
   zsh-autosuggestions
   macos
 )
