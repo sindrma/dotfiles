@@ -16,15 +16,16 @@ brew "vim"
 
 # editors
 cask "visual-studio-code"
+cask "zed"
 cask "cmux"
 cask "claude-code"
 
 # apps
 cask "1password"
 cask "1password-cli"
-cask "arc"
 cask "claude"
 cask "spotify"
+cask "zen"
 
 # containers
 cask "docker-desktop"
