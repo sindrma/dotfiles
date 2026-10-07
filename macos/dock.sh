@@ -21,8 +21,8 @@ DOCK_APPS=(
   "/System/Applications/App Store.app"
   "/System/Applications/System Settings.app"
   "/Applications/Visual Studio Code.app"
-  "/Applications/cmux.app"
-  "/Applications/Arc.app"
+  "/Applications/Zed.app"
+  "/Applications/Zen.app"
   "/Applications/Ghostty.app"
   "/Applications/Slack.app"
 )

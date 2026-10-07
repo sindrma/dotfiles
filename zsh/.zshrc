@@ -1,5 +1,5 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -62,6 +62,7 @@ ZSH_THEME="spaceship"
 plugins=(
   git
   docker
+  kubectl
   zsh-autosuggestions
   macos
 )
@@ -142,3 +143,17 @@ unset _dotfile
 
 # Include dotfiles (hidden folders) in tab completion
 _comp_options+=(globdots)
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/sindremagnussenflo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/sindremagnussenflo/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/sindremagnussenflo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/sindremagnussenflo/google-cloud-sdk/completion.zsh.inc'; fi
+
+# pnpm
+export PNPM_HOME="/Users/sindremagnussenflo/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
+# pnpm end
